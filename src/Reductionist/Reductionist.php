@@ -408,7 +408,7 @@ public function processImage($input, $output, $options = array()) {
 		}
 
 /* bg */
-		if ( $hasBG = (isset($options['bg']) && !$outputIsJpg) || isset($farBox)) {
+		if ($hasBG = isset($options['bg']) || isset($farBox)) {
 			if (self::$palette === null)  { self::$palette = new \Imagine\Image\Palette\RGB(); }
 			if (isset($options['bg']))  {
 				$bgColor = explode('/', $options['bg']);
